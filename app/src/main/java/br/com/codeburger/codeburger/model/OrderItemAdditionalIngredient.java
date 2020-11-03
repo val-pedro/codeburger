@@ -1,5 +1,6 @@
 package br.com.codeburger.codeburger.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,4 +24,14 @@ public class OrderItemAdditionalIngredient {
 
     @Column
     private Integer quantity;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_item_id", referencedColumnName = "id")
+    private OrderItem orderItem;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "ingredient_id", referencedColumnName = "id")
+    private Ingredient ingredient;
 }

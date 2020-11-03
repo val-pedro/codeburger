@@ -21,10 +21,4 @@ public class Ingredient {
 
     @Column
     private Double price;
-
-    @OneToMany(mappedBy = "ingredient")
-    private List<SandwichIngredient> sandwichIngredients;
-
-//    @OneToMany(mappedBy = "ingredient")
-//    private List<OrderItemAdditionalIngredient> orderItemAdditionalIngredients;
 }

@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Builder(toBuilder = true)
@@ -12,9 +11,8 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "sandwich")
-public class Sandwich extends AbstractEntity{
+public class Sandwich {
     @Id
-
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -23,7 +21,4 @@ public class Sandwich extends AbstractEntity{
 
     @OneToMany(mappedBy = "sandwich")
     private List<SandwichIngredient> sandwichIngredients;
-
-//    @OneToMany(mappedBy = "sandwich")
-//    private List<OrderItem> orderItems;
 }

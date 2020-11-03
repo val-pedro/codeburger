@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Builder(toBuilder = true)
@@ -40,4 +41,7 @@ public class OrderItem {
     @ManyToOne
     @JoinColumn(name = "sandwich_id", referencedColumnName = "id")
     private Sandwich sandwich;
+
+    @OneToMany(mappedBy = "orderItem", fetch = FetchType.LAZY)
+    private List<OrderItemAdditionalIngredient> orderItemAdditionalIngredients;
 }

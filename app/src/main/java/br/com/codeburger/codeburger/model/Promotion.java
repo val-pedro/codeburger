@@ -18,4 +18,7 @@ public class Promotion {
 
     @Column
     private String name;
+
+    @Column
+    private Boolean Active;
 }

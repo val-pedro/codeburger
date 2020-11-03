@@ -27,5 +27,5 @@ public class SandwichIngredient {
     private Ingredient ingredient;
 
     @Column
-    private Double amount;
+    private Double quantity;
 }
